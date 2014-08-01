@@ -19,6 +19,10 @@
     <%= f.label :published_at %><br>
     <%= f.time_select :published_at %>
   </div>
+    <div class="field">
+    <%= f.label :day %><br>
+    <%= f.select :day_id ,  options_from_collection_for_select(Day.all, :id, :time) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
