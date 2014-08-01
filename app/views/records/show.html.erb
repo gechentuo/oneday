@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @record.title %>
+</p>
+
+<p>
+  <strong>Des:</strong>
+  <%= @record.des %>
+</p>
+<p>
+  <strong>IMG:</strong>
+  <%= image_tag @record.img.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
