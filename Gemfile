@@ -25,10 +25,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'compass-rails', '~> 1.1.7'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'twitter-bootstrap-rails'
-gem 'enumerize', :git => "https://github.com/brainspec/enumerize.git"
+gem 'enumerize' 
 gem 'jquery-rails'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'will_paginate', :git => "git://github.com/mislav/will_paginate.git"
+gem "paperclip" 
+gem 'will_paginate' 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
  
 group :development do
