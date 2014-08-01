@@ -7,6 +7,7 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
+
 		<div id="operation">
 			<a href="#" class="button button-default">记一个</a>
 		</div>
@@ -27,6 +28,7 @@
 					<li>  <a href="#">7月1日</a></li>
 					<li>  <a href="#">7月2日</a></li>
 				</ul>
+
 				<ul class="nav nav-list">
 					<li class='month'>  <a style="color:#000000;" href="#" onclick="return false">6月</a></li>
 					<li class="divider"></li>
@@ -52,5 +54,6 @@
 		<div id="record_content">
 			<%= yield :record_content%>
 		</div>
+		
 	</body>
 </html>
