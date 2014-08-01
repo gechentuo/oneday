@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801102831) do
+ActiveRecord::Schema.define(version: 20140801122656) do
 
   create_table "days", force: true do |t|
     t.date     "time"
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(version: 20140801102831) do
     t.string   "img_content_type"
     t.integer  "img_file_size"
     t.datetime "img_updated_at"
+    t.integer  "task_id"
   end
+
+  add_index "records", ["task_id"], name: "index_records_on_task_id"
 
   create_table "tasks", force: true do |t|
     t.string   "title"
