@@ -22,7 +22,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+gem 'compass-rails', '~> 1.1.7'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'twitter-bootstrap-rails'
+gem 'enumerize', :git => "https://github.com/brainspec/enumerize.git"
+gem 'jquery-rails'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'will_paginate', :git => "git://github.com/mislav/will_paginate.git"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
  
 group :development do
