@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Oneday</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div id="operation">
-<a href="#" class="button button-default">记一个</a>
-</div> 
-<div id="date_sidebar"></div>
-<div id="task_list"></div>
-<div id="record_content"></div>
-
-
-</body>
+	<head>
+		<title>Oneday</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="operation">
+			<a href="#" class="button button-default">记一个</a>
+		</div>
+		<div id="date_sidebar">
+			
+			<div class="sidebar">
+				<ul class="nav nav-list">
+					<li class = 'month'>  <a style="color:#000000;" href="#" onclick="return false">7月</a></li>
+					<li class="divider"></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+				</ul>
+				<ul class="nav nav-list">
+					<li class='month'>  <a style="color:#000000;" href="#" onclick="return false">6月</a></li>
+					<li class="divider"></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+				</ul>
+				<ul class="nav nav-list">
+					<li class='month'>  <a style="color:#000000;" href="#" onclick="return false">5月</a></li>
+					<li class="divider"></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+					<li>  <a href="#">7月1日</a></li>
+					<li>  <a href="#">7月2日</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="task_list">
+			<%= yield :task_list%>
+		</div>
+		<div id="record_content">
+			<%= yield :record_content%>
+		</div>
+	</body>
 </html>

@@ -41,7 +41,6 @@ color: #000;
 color: #666;
 }
 &:hover {
- 
 background-color: #e5e5e5;
 text-decoration: none;
 }
@@ -116,4 +115,18 @@ left:8px;
 right:8px;
 top:3px;
 min-height:55px;
+}
+.sidebar {
+width:100%;
+float:left;
+background-color:#ffffff;
+margin-bottom:30px;
+}
+.nav-list li{
+text-align: end;
+width:100%;
+}
+.nav-list > li > a {
+padding: 3px 15px;
+color: #222;
 }
