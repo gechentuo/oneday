@@ -7,7 +7,9 @@ $(document).ready(function() {
 	$('.sidebar ul li a').click(function(e) {
 		e.preventDefault();
 	});
-
+	$('a.button').click(function(e) {
+		e.preventDefault();
+	});
 	function initDateSlide() {
 		MonthArray.each(function() {
 			$(this).siblings().hide();

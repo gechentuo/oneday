@@ -8,23 +8,27 @@
 	</head>
 	<body>
 		<div id="operation">
-			<a href="#" class="button button-default">记一个</a>
+			<a href="#" class="button button-default">Pick a Note</a>
 		</div>
 		<div id="date_sidebar">
 			<div class="sidebar">
-				<% @day_months.sort.each do |month, days| %>
+				<% @day_months.sort.reverse.each do |month, days| %>
 				<ul class="nav nav-list">
-					<li class = 'month'>  <a style="color:#000000;" href="#" onclick="return false"><%= month.strftime('%B') %></a></li>
+					<li class = 'month'>  <a href="#" style="color:rgb(15, 143, 15);" onclick="return false"><%= month.strftime('%B') %></a></li>
 					<li class="divider"></li>
-					<% for day in days %>			
-					<li>  <a href="#"><%=  DateTime.parse(day.time.to_s).strftime('%d/%m ').to_s %></a></li>
+					<% for day in days %>
+					<li>
+						<%= link_to DateTime.parse(day.time.to_s).strftime('%d/%m ').to_s,updateTasks_url(day.time), remote: true%>
+					</a></li>
 					<% end %>
 				</ul>
 				<% end %>
 			</div>
 		</div>
 		<div id="task_list">
-			<%= yield :task_list%>
+			<ul class="tasks_ul">
+				<%= render(@tasks) || "今天没有记录!"%>
+			</ul>
 		</div>
 		<div id="record_content">
 			<%= yield :record_content%>

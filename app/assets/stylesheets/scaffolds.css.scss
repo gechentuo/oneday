@@ -39,7 +39,9 @@ a {
 color: #000;
 &:visited {
 color: #666;
+
 }
+
 &:hover {
 background-color: #e5e5e5;
 text-decoration: none;
@@ -85,7 +87,7 @@ position: absolute;
 background-color: #ffffff;
 overflow:hidden;
 top:60px;
-min-height:500px;
+height:91%;
 }
 #date_sidebar{
 left:8px;
@@ -94,6 +96,7 @@ width:200px;
 #task_list{
 left:210px;
 width:500px;
+background-color:#f1f1f1;
 }
 #record_content{
 left:712px;

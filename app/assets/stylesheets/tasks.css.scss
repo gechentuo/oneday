@@ -1,3 +1,31 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tasks_ul{
+list-style: none;
+margin:0;
+}
+.task{
+border-radius: 5px;
+height:60px;
+width:95%;
+margin-left:auto;
+margin-right:auto;
+border-bottom:1px solid #eee;
+border-right:1px solid #eee;
+margin-top:5px;
+background: #ffffff;
+position:relative;
+h4{
+margin:0;
+padding-top: 2%;
+color:#38485a;
+text-align: center;
+}
+p{
+position:absolute;
+bottom:0;
+right:20px;
+ 
+}
+}
