@@ -8,7 +8,17 @@
 	</head>
 	<body>
 		<div id="operation">
-			<a href="#" class="button button-default">Pick a Note</a>
+			<a href="#myModal" role="button" data-toggle="modal" class="button button-default">Take a Note</a>
+			<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 id="myModalLabel">Take a Note</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body…</p>
+				</div>
+				 
+			</div>
 		</div>
 		<div id="date_sidebar">
 			<div class="sidebar">
@@ -18,7 +28,7 @@
 					<li class="divider"></li>
 					<% for day in days %>
 					<li>
-						<%= link_to DateTime.parse(day.time.to_s).strftime('%d/%m ').to_s,updateTasks_url(day.time), remote: true%>
+						<%= link_to DateTime.parse(day.time.to_s).strftime('%d-%B ').to_s,updateTasks_url(day.time), remote: true%>
 					</a></li>
 					<% end %>
 				</ul>

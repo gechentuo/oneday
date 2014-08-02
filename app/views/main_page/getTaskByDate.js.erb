@@ -1,1 +1,1 @@
- $(".tasks_ul").html("<%= escape_javascript(render(@tasks))%>")
+ $(".tasks_ul").hide().html("<%= escape_javascript(render(@tasks))%>").fadeIn(1000);
