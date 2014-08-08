@@ -1,15 +1,37 @@
 $(document).ready(function() {
 	var currentMonth;
 	var MonthArray = $('.month');
-
 	initDateSlide();
-
 	$('.sidebar ul li a').click(function(e) {
 		e.preventDefault();
 	});
-	// $('a.button').click(function(e) {
-	// 	e.preventDefault();
-	// });
+	$('#wrapper_record_content').css("width", $(document).width() - 720).css('height', $('#date_sidebar').height());
+	var widthLong = Math.round(($(document).width() - 220) * 2 / 3);
+	// alert($(document).width());
+	// $('#record_content').css("width",Math.round((($(document).width()-700)/$(document).width())*100));
+	var widthShort = Math.round(($(document).width() - 220) * 1 / 3);
+
+	 
+
+	$('#task_list').click(function() {
+		$(this).animate({
+			width: widthLong
+		});
+		$('#record_content').animate({
+			width: widthShort,
+			marginLeft: 0
+		});
+	});
+	$('#record_content').click(function() {
+		$(this).animate({
+			width: widthLong,
+			marginLeft: 0
+		});
+		$('#task_list').animate({
+			width: widthShort
+		});
+	});
+
 	function initDateSlide() {
 		MonthArray.each(function() {
 			$(this).siblings().hide();
@@ -19,8 +41,6 @@ $(document).ready(function() {
 		});
 		currentMonth = $('.month').first();
 		openMonthSlide(currentMonth);
-
-
 	}
 
 	function closeMonthSlide(currentMonth) {
@@ -40,14 +60,11 @@ $(document).ready(function() {
 					closeMonthSlide($(this));
 				}
 			});
-		} 
+		}
 		if (currentMonth.hasClass('currentMonth')) {
 			closeMonthSlide(currentMonth);
 		} else {
 			openMonthSlide(currentMonth);
 		}
-
 	}
-	
-
 });

@@ -10,10 +10,10 @@ font-size: 13px;
 line-height: 18px;
 }
 label{
-	display: initial;
+display: initial;
 }
 .hidden{
-	display:none;
+display:none;
 }
 .button{
 padding-left: 10px;
@@ -33,16 +33,15 @@ white-space: nowrap;
 word-wrap: normal;
 line-height: normal;
 vertical-align: middle;
-
 }
 .button-default{
 border-color: #d3d3d3;
 background: #f8f8f8;
 color: #333;
 }
- 
+
 .button-pubnote{
-	color:rgb(15, 143, 15);
+color:rgb(15, 143, 15);
 }
 pre {
 background-color: #eee;
@@ -104,6 +103,8 @@ height:91%;
 #date_sidebar{
 left:8px;
 width:200px;
+height:auto;
+min-height: 500px;
 }
 #task_list{
 left:210px;
@@ -111,8 +112,14 @@ width:500px;
 background-color:#f1f1f1;
 }
 #record_content{
-left:712px;
-right:8px;
+width: 100%;
+top:0px;	
+right:0;
+}
+#wrapper_record_content{
+position: relative; //<-----needed
+top:60px;
+left: 712px; //<------------needed
 }
 #operation{
 a{

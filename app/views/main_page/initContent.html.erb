@@ -7,7 +7,7 @@
 		</div>
 		<div id="newTaskBody" class="modal-body">
 		</div>
-		 
+		
 		
 	</div>
 </div>
@@ -31,6 +31,8 @@
 		<%= render(@tasks) || "今天没有记录!"%>
 	</ul>
 </div>
-<div id="record_content">
-	<%= yield :record_content%>
+<div id="wrapper_record_content">
+	<div id="record_content">
+		<%= yield :record_content%>
+	</div>
 </div>
