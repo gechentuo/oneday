@@ -29,6 +29,7 @@ gem 'enumerize'
 gem 'jquery-rails'
 gem "paperclip" 
 gem 'will_paginate' 
+gem 'jquery-fileupload-rails'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
  
 group :development do

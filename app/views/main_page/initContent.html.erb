@@ -1,0 +1,36 @@
+<div id="operation">
+	<%= link_to 'Take a Note', new_task_url ,remote: true,class: "button button-default"%>
+	<div id="body_take_note" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4 id="myModalLabel">Take a Note</h4>
+		</div>
+		<div id="newTaskBody" class="modal-body">
+		</div>
+		 
+		
+	</div>
+</div>
+<div id="date_sidebar">
+	<div class="sidebar">
+		<% @day_months.sort.reverse.each do |month, days| %>
+		<ul class="nav nav-list">
+			<li class = 'month'>  <a href="#" style="color:rgb(15, 143, 15);" onclick="return false"><%= month.strftime('%B') %></a></li>
+			<li class="divider"></li>
+			<% for day in days %>
+			<li>
+				<%= link_to DateTime.parse(day.time.to_s).strftime('%d-%B ').to_s,updateTasks_url(day.time), remote: true%>
+			</a></li>
+			<% end %>
+		</ul>
+		<% end %>
+	</div>
+</div>
+<div id="task_list">
+	<ul class="tasks_ul">
+		<%= render(@tasks) || "今天没有记录!"%>
+	</ul>
+</div>
+<div id="record_content">
+	<%= yield :record_content%>
+</div>

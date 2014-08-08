@@ -1,29 +1,22 @@
 <%= form_for @record,  :html=>{:multipart=>true} do |f| %>
-  <% if @record.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
-
-      <ul>
-      <% @record.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<% if @record.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+  <ul>
+    <% @record.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="sl-custom-file" style="float:right;">
+  <div class="upload-preview">
+    <%= image_tag "placeholder2.png", style: "min-width: 130px;min-height: 130px;max-width:130px;max-height:130px;display: inline-block; padding:2px;",:class => 'button button-default' %>
   </div>
-  <div class="field">
-    <%= f.label :des %><br>
-    <%= f.text_field :des %>
-  </div>
-  <div class="field">
-    <%= f.label :img %><br>
-     <%= f.file_field :img %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  <%= f.file_field :img, class: "file ui-input-file" %>
+</div>
+<div style="float:left">
+  <textarea placeholder="add something..." style="height:126px;width:335px; "></textarea>
+</div>
 <% end %>

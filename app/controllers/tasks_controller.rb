@@ -15,6 +15,11 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @record = Record.new
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   # GET /tasks/1/edit

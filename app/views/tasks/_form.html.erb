@@ -1,29 +1,31 @@
 <%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<% if @task.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="field" >
+  <%= f.text_field :title ,:placeholder => 'Hi, What happened?',:style => 'width:90%;margin-left:3%' %>
+</div>
+<div class="field hidden">
+  <%= f.label :published_at %>
+  <%= f.time_select :published_at %>
+</div>
+<div class="field hidden">
+  <%= f.label :day %>
+  <%= f.select :day_id ,  options_from_collection_for_select(Day.all, :id, :time) %>
+</div>
+<div class="form_body">
+  <div class="field" style="height:130px;width:93%;margin-left:3%">
+    <%= render partial: "records/form"  %>
   </div>
-  <div class="field">
-    <%= f.label :published_at %><br>
-    <%= f.time_select :published_at %>
-  </div>
-    <div class="field">
-    <%= f.label :day %><br>
-    <%= f.select :day_id ,  options_from_collection_for_select(Day.all, :id, :time) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+<div class="field">
+  <%= f.submit 'Publish a Note', :class => 'button button-default button-pubnote',:style => 'width:93%;margin-left:3%'  %>
+</div>
 <% end %>
