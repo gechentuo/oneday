@@ -1,16 +1,16 @@
+
+
+$("#newTaskBody").html("<%=  escape_javascript render(:partial => 'form') %>"); 
 $("#body_take_note").modal();
+$(".file").change(function(event) {
+	var target = $(this).prev().children('img')
+	var input = $(event.currentTarget);
+	var file = input[0].files[0];
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		image_base64 = e.target.result;
+		target.attr('src', image_base64);
+	};
 
-$("#newTaskBody").html("<%=  escape_javascript render(:partial => 'form') %>");
-var preview = $(".upload-preview img");
-$(".file").change(function(event){
-var input = $(event.currentTarget);
-var file = input[0].files[0];
-var reader = new FileReader();
-reader.onload = function(e){
-image_base64 = e.target.result;
-preview.attr("src", image_base64);
-};
-
- 
-reader.readAsDataURL(file);
+	reader.readAsDataURL(file);
 });

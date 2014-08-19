@@ -10,12 +10,16 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+
   end
 
   # GET /tasks/new
   def new
     @task = Task.new
-    @record = Record.new
+    
+     3.times do 
+      @task.records.build
+     end
     respond_to do |format|
       format.js
       format.html

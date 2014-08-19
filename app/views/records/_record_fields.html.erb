@@ -1,0 +1,17 @@
+
+<div class="field fields"  style="height:160px;width:93%;margin-left:3%;margin-bottom:20px;">
+
+  <div class="sl-custom-file" style="float:right;">
+    <div class="upload-preview">
+      <%= image_tag "placeholder2.png", style: "min-width: 130px;min-height: 130px;max-width:130px;max-height:130px;display: inline-block; padding:2px;",:class => 'button button-default' %>
+    </div>
+    
+    <%= r.file_field :img, class: "file ui-input-file" %>
+  </div>
+  <div style="float:left">
+    <textarea id="record_des" name="record[des]" placeholder="add something..." style="height:126px;width:335px; "></textarea>
+  </div>
+<p><%= r.hidden_field :_destroy %>
+  <%= link_to_function "remove", "remove_fields(this)", :class => "badge  ",:style => "color:white;"%>
+</p>  
+</div>

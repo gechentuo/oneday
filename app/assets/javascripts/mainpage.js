@@ -67,4 +67,10 @@ $(document).ready(function() {
 			openMonthSlide(currentMonth);
 		}
 	}
+	
 });
+function remove_fields(link){
+		  $(link).prev("input[type=hidden]").value="1";
+		  $(link).parent().parent().hide(800);
+
+	}	

@@ -43,6 +43,9 @@ color: #333;
 .button-pubnote{
 color:rgb(15, 143, 15);
 }
+.button-addrecord{
+	color:orange;
+}
 pre {
 background-color: #eee;
 padding: 10px;
@@ -122,7 +125,7 @@ top:60px;
 left: 712px; //<------------needed
 }
 #operation{
-a{
+a:first-child{
 float: right;
 margin-top: 8px;
 margin-right: 8px;
