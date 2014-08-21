@@ -33,6 +33,6 @@
 </div>
 <div id="wrapper_record_content">
 	<div id="record_content">
-		<%= yield :record_content%>
+		<%= render(@records) || "没有任何记录!"%>
 	</div>
 </div>

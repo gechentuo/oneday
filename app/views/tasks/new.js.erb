@@ -1,5 +1,3 @@
-
-
 $("#newTaskBody").html("<%=  escape_javascript render(:partial => 'form') %>"); 
 $("#body_take_note").modal();
 $(".file").change(function(event) {
@@ -11,6 +9,10 @@ $(".file").change(function(event) {
 		image_base64 = e.target.result;
 		target.attr('src', image_base64);
 	};
-
 	reader.readAsDataURL(file);
 });
+var addRecordButton = $("#task_title").next();
+addRecordButton.addClass("button");
+addRecordButton.addClass("button-default");
+addRecordButton.addClass("button-pubnote");
+addRecordButton.addClass("new-record-button");

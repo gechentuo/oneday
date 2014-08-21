@@ -1,23 +1,20 @@
 <%= form_for @task ,:html=>{:multipart=>true} do |f| %>
-
 <div class="field" >
-  <%= f.text_field :title ,:placeholder => 'Hi, What happened?',:style => 'width:90%;margin-left:3%' %>
-</div>
-<div class="field">
-  <%= f.label :'Add a Record' ,remote: true,:class => 'button button-default button-pubnote',:style => 'color:orange;text-align:center;width:89%;margin-left:3%'%>
+	<%= f.text_field :title ,:placeholder => 'Hi, What happened?',:style => 'width:90%;margin-left:3%',:id => 'task_title' %>
+	<%= link_to_add_fields "Add a Record",f,:records %>
 </div>
 <div class="field hidden">
-  <%= f.label :published_at %>
-  <%= f.time_select :published_at %>
+	<%= f.label :published_at %>
+	<%= f.time_select :published_at %>
 </div>
 <div class="field hidden">
-  <%= f.label :day %>
-  <%= f.select :day_id ,  options_from_collection_for_select(Day.all, :id, :time) %>
+	<%= f.label :day %>
+	<%= f.select :day_id ,  options_from_collection_for_select(Day.all, :id, :time) %>
 </div>
 <%= f.fields_for :records do |record| %>
 <%= render "records/record_fields", :r => record %>
 <% end %>
 <div class="field">
-  <%= f.submit 'Publish a Note', :class => 'button button-default button-pubnote',:style => 'width:93%;margin-left:3%'  %>
+	<%= f.submit 'Publish a Note', :class => 'button button-default button-pubnote',:style => 'width:93%;margin-left:3%'  %>
 </div>
 <% end %>

@@ -11,7 +11,7 @@ $(document).ready(function() {
 	// $('#record_content').css("width",Math.round((($(document).width()-700)/$(document).width())*100));
 	var widthShort = Math.round(($(document).width() - 220) * 1 / 3);
 
-	 
+
 
 	$('#task_list').click(function() {
 		$(this).animate({
@@ -67,10 +67,33 @@ $(document).ready(function() {
 			openMonthSlide(currentMonth);
 		}
 	}
-	
-});
-function remove_fields(link){
-		  $(link).prev("input[type=hidden]").value="1";
-		  $(link).parent().parent().hide(800);
 
-	}	
+});
+
+function remove_fields(link) {
+	$(link).prev("input[type=hidden]").value = "1";
+	$(link).parent().parent().hide(800);
+
+}
+
+function add_fields(link, association, content) {
+
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("new_" + association, "g")
+	var newRecord = $(content.replace(regexp, new_id));
+	newRecord.hide();
+	newRecord.insertAfter($(link).parent());
+	newRecord.show(1000);
+	$(".file").change(function(event) {
+		var target = $(this).prev().children('img')
+		var input = $(event.currentTarget);
+		var file = input[0].files[0];
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			image_base64 = e.target.result;
+			target.attr('src', image_base64);
+		};
+
+		reader.readAsDataURL(file);
+	});
+}

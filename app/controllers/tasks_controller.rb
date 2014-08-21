@@ -16,10 +16,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
-    
-     3.times do 
-      @task.records.build
-     end
+    @records = @task.records.build
     respond_to do |format|
       format.js
       format.html
@@ -78,6 +75,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :published_at, :day_id)
+      params.require(:task).permit(:title, :published_at, :day_id,records_attributes: [:_destroy,:id,:des,:img])
     end
 end
