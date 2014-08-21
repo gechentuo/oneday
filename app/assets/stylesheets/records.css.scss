@@ -22,4 +22,23 @@ opacity:0;
 filter:alpha(opacity=0);
 -ms-filter:"alpha(opacity=0)";
 cursor:pointer;
-} 
+}
+.records_ul{
+list-style: none;
+width:80%;
+padding-top:3%;
+margin-left: 3%;
+margin-right:auto;
+	li{
+		height:200px;
+		margin-bottom:10px; 
+		img{
+			float:left;
+			padding:2px;
+			border:1px solid #d3d3d3;
+		}
+		p{
+			float:right;
+		}
+	}
+}

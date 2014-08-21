@@ -1,6 +1,6 @@
 <li>
 <div class="task" id="task">
-	 <h5><%= task.title%></h5>	
+	 <h5><%= link_to  task.title , showRecords_url(task), remote: true %></h5>	
 	 <p><span style="color:#aaa; font-size:10px">  <%= DateTime.parse(task.published_at.to_s).strftime('%H:%M').to_s %></span></p>	
 </div>
 </li>

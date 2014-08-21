@@ -18,5 +18,15 @@ class MainPageController < ApplicationController
 			format.js 
 		end
 	end
- 	 
+
+ 	def getRecordsByTask
+		  @records = Task.find(params[:task]).records
+		  respond_to do |format|
+		  	format.js
+		  	format.html
+		  end
+	end 
+
+	
+
 end

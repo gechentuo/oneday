@@ -12,7 +12,7 @@ $(document).ready(function() {
 	var widthShort = Math.round(($(document).width() - 220) * 1 / 3);
 
 
-
+	 
 	$('#task_list').click(function() {
 		$(this).animate({
 			width: widthLong
@@ -30,6 +30,7 @@ $(document).ready(function() {
 		$('#task_list').animate({
 			width: widthShort
 		});
+
 	});
 
 	function initDateSlide() {

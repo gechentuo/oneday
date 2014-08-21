@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    get  'getTaskByDate/:date'=>'main_page#getTaskByDate',as: :updateTasks
+   get  'getRecordsByTask/:task'=>'main_page#getRecordsByTask',as: :showRecords
    root 'main_page#initContent'
 
   # Example of regular route:

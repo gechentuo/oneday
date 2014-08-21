@@ -19,7 +19,6 @@ class TasksController < ApplicationController
     @records = @task.records.build
     respond_to do |format|
       format.js
-      format.html
     end
   end
 
