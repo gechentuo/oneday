@@ -1,6 +1,11 @@
 <li>
+	<div class="record_img">
 <% if !record.img.nil? %>
 <%= image_tag record.img.url(:thumb) %>
 <% end %>
-<p><%= record.des %> </p>
+</div>
+<div class="record_content">
+ <p style="width:100%;word-break:break-all"><%=  record.des %> </p> 
+</div>
  </li>
+  

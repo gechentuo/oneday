@@ -21,6 +21,7 @@ $(document).ready(function() {
 			width: widthShort,
 			marginLeft: 0
 		});
+		 
 	});
 	$('#record_content').click(function() {
 		$(this).animate({
@@ -30,7 +31,7 @@ $(document).ready(function() {
 		$('#task_list').animate({
 			width: widthShort
 		});
-
+		 
 	});
 
 	function initDateSlide() {

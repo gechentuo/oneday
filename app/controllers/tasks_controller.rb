@@ -33,7 +33,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -76,4 +76,6 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:title, :published_at, :day_id,records_attributes: [:_destroy,:id,:des,:img])
     end
+
+
 end

@@ -23,9 +23,21 @@ filter:alpha(opacity=0);
 -ms-filter:"alpha(opacity=0)";
 cursor:pointer;
 }
+.record_content{
+	width:60%;
+	max-height:200px;
+	float:right;
+	overflow:hidden;
+}
+.record_img{
+	width:30%;
+	max-height:200px;
+	float:left;
+
+}
 .records_ul{
 list-style: none;
-width:80%;
+width:90%;
 padding-top:3%;
 margin-left: 3%;
 margin-right:auto;
