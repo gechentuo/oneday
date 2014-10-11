@@ -10,6 +10,8 @@ namespace :myrailsapp do
 	desc "automatically add day"
 	task add_days: :environment do 
 		puts 'add a day'
+		puts 'localtime'+Date.today.localtime
+		puts 'utc'+Date.today.utc
 		Day.create(time: Date.today)
 	end
 end
